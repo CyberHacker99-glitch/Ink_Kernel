@@ -69,4 +69,4 @@ Use at your own risk.
 ---
 
 ## License
-(To be decided)
+GNU AFFERO GENERAL PUBLIC LICENSE
