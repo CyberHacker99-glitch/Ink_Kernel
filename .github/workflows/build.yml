@@ -1,0 +1,24 @@
+name: Build Kernel
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install toolchain
+      run: |
+        sudo apt update
+        sudo apt install -y gcc-riscv64-unknown-elf
+
+    - name: Build
+      run: make
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: ink-kernel
+        path: build/ink.elf
